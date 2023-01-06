@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 31
+    buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.example.android.sampletvinput"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 31
         versionCode 3
         versionName "1.2"
     }
@@ -17,6 +17,13 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+    }
+
+    packagingOptions {
+        exclude 'error_prone/Annotations.gwt.xml'
+        exclude 'third_party/java_src/error_prone/project/annotations/Annotations.gwt.xml'
+        exclude 'third_party/java_src/error_prone/project/annotations/Google_internal.gwt.xml'
+        exclude 'jsr305_annotations/Jsr305_annotations.gwt.xml'
     }
 }
 

@@ -51,7 +51,9 @@
         android:icon="@drawable/android_48dp"
         android:label="@string/app_name"
         android:theme="@style/Theme.Leanback">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
@@ -61,6 +63,7 @@
         <!-- Launched by the TV app before it uses RichTvInputService. This registers channels and
         sets up SampleJobService to provide program information in the background. -->
         <activity android:name=".rich.RichTvInputSetupActivity"
+            android:exported="true"
             android:theme="@style/TifSetup">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,6 +74,7 @@
         the app-link connected to this activity. -->
         <activity
             android:name=".rich.RichAppLinkDetailsActivity"
+            android:exported="true"
             android:theme="@style/Theme.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -81,6 +85,7 @@
         the app-link connected to this activity. -->
         <activity
             android:name=".rich.RichAppLinkSidePanelActivity"
+            android:exported="true"
             android:theme="@style/Theme.Panel">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -94,6 +99,7 @@
         -->
         <service
             android:name=".rich.RichTvInputService"
+            android:exported="true"
             android:label="@string/rich_input_label"
             android:permission="android.permission.BIND_TV_INPUT">
             <!-- Required filter used by the system to launch our account service. -->
@@ -114,7 +120,9 @@
             android:exported="true" />
 
         <!-- This receiver is for sync job schedule well after reboot. -->
-        <receiver android:name=".rich.RichBootReceiver">
+        <receiver android:name=".rich.RichBootReceiver"
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>

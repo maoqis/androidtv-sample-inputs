@@ -48,7 +48,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import junit.framework.Assert;
+//import junit.framework.Assert;
 
 /**
  * Service to handle callbacks from JobScheduler. This service will be called by the system to
@@ -245,7 +245,7 @@ public abstract class EpgSyncJobService extends JobService {
         JobScheduler jobScheduler =
                 (JobScheduler) context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
         int result = jobScheduler.schedule(job);
-    Assert.assertEquals(JobScheduler.RESULT_SUCCESS, result);
+//    Assert.assertEquals(JobScheduler.RESULT_SUCCESS, result);
         if (DEBUG) {
             Log.d(TAG, "Scheduling result is " + result);
         }

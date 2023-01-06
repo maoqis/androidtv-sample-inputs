@@ -64,6 +64,8 @@ public final class ModelUtils {
         // Create a map from original network ID to channel row ID for existing channels.
         LongSparseArray<Long> channelMap = new LongSparseArray<>();
         Uri channelsUri = TvContract.buildChannelsUriForInput(inputId);
+        TvContract.
+
         String[] projection = {Channels._ID, Channels.COLUMN_ORIGINAL_NETWORK_ID};
         ContentResolver resolver = context.getContentResolver();
         Cursor cursor = null;
